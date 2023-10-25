@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vpmpkg</title>
+    <link rel="stylesheet" href="./src/index.scss" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h2><span>VPM</span> <span>パッケージの</span><span>マニフェストを</span> <span>GitHub</span> <span>レポジトリから</span><span>生成</span></h2>
+        <div id="configurations">
+          <labeled-text-input id="gh_repo" placeholder="owner/repo">
+            <span>GitHub レポジトリ</span>
+          </labeled-text-input>
+          <labeled-text-input id="pkg_id" placeholder="io.github.owner.repo">
+            <span>パッケージ ID</span>
+          </labeled-text-input>
+          <labeled-text-input id="manifest_path" placeholder="Asserts/Package/package.json">
+            <span><code>package.json</code> のパス</span>
+          </labeled-text-input>
+        </div>
+        <div id="result_wrapper">
+          <button><span class="material-symbols-outlined">content_copy</span></button>
+          <div id="result"></div>
+        </div>
+      </section>
+      <section>
+        <h2>開発者は…</h2>
+        <p>
+          パッケージのマニフェスト <code>package.json</code> からレポジトリを自動生成する API により、レポジトリ個別の設定が必要なくなります。
+          レポジトリに tag を追加すると自動で反映されるため、CI の設定も必要ありません。
+          1 GitHub レポジトリに 1 VPM レポジトリが対応するため、シンプルな構成が可能です。
+          デフォルトで <code>io.github.owner.repo</code> のパッケージ ID が割り当てられますが、ほかの ID を指定することも可能です。
+        </p>
+        <h2>ユーザーは…</h2>
+        <p>
+          1 GitHub レポジトリに 1 VPM レポジトリが対応するため、望んだパッケージのみをインストールできます。
+          ただし、前提パッケージを自分で読み込む必要があります。
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
