@@ -13,6 +13,7 @@ window.addEventListener('load', () => {
   const pkgIdInput = getElementByIdOrNull<HTMLInputElement>('pkg_id');
   const manifestPathInput = getElementByIdOrNull<HTMLInputElement>('manifest_path');
   const resultDiv = getElementByIdOrNull('result');
+  const copyButton = getElementByIdOrNull('copy_button');
 
   ghRepoInput.addEventListener('change', () => {
     const value = ghRepoInput.value;
@@ -50,4 +51,8 @@ window.addEventListener('load', () => {
   ghRepoInput.addEventListener('input', updateResult);
   pkgIdInput.addEventListener('input', updateResult);
   manifestPathInput.addEventListener('input', updateResult);
+
+  copyButton.addEventListener('click', () => {
+    navigator.clipboard.writeText(resultDiv.textContent ?? '');
+  });
 });
