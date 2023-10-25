@@ -16,16 +16,16 @@
     </header>
     <main>
       <section>
-        <h2>Generate VPM Repository Manifest from GitHub Repository</h2>
+        <h2><span>VPM</span> <span>レポジトリの</span><span>マニフェストを</span> <span>GitHub</span> <span>レポジトリから</span><span>生成</span></h2>
         <div id="configurations">
           <labeled-text-input id="gh_repo" placeholder="owner/repo">
-            <span>GitHub Repository</span>
+            <span>GitHub レポジトリ</span>
           </labeled-text-input>
           <labeled-text-input id="pkg_id" placeholder="io.github.owner.repo">
-            <span>Package ID</span>
+            <span>パッケージ ID</span>
           </labeled-text-input>
           <labeled-text-input id="manifest_path" placeholder="Asserts/Package/package.json">
-            <span>Path to <code>package.json</code></span>
+            <span><code>package.json</code> のパス</span>
           </labeled-text-input>
         </div>
         <div id="result_wrapper">
@@ -34,25 +34,17 @@
         </div>
       </section>
       <section>
-        <h2>For Developer:</h2>
-        <h3>Automated Manifest Generation:</h3>
+        <h2>開発者は…</h2>
         <p>
-          Our API now automates the generation of VPM repository manifests directly from your <code>package.json</code> file.
-          This eliminates the need for you to manually configure your VPM repository.
-          You only need to add a version tag to your repository, with no requirement for continuous integration (CI).
+          パッケージのマニフェスト <code>package.json</code> からレポジトリを自動生成する API により、レポジトリ個別の設定が必要なくなります。
+          レポジトリに tag を追加すると自動で反映されるため、CI の設定も必要ありません。
+          1 GitHub レポジトリに 1 VPM レポジトリが対応するため、シンプルな構成が可能です。
+          デフォルトで <code>io.github.owner.repo</code> のパッケージ ID が割り当てられますが、ほかの ID を指定することも可能です。
         </p>
-        <h3>One VPM Repository, One GitHub Repository:</h3>
+        <h2>ユーザーは…</h2>
         <p>
-          This principle simplifies the management of your VPM repositories.
-          You can define custom IDs for your packages, as opposed to using the default format of <code>io.github.owner.repo</code>.
-        </p>
-      </section>
-      <section>
-        <h2>For User:</h2>
-        <h3>One VPM Repository, One GitHub Repository:</h3>
-        <p>
-          You can install VPM packages with precision, selecting only the packages you require without any unnecessary inclusions.
-          Dependencies need to be installed separately.
+          1 GitHub レポジトリに 1 VPM レポジトリが対応するため、望んだパッケージのみをインストールできます。
+          ただし、前提パッケージを自分で読み込む必要があります。
         </p>
       </section>
     </main>
